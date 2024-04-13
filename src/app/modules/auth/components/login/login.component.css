@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+html, body{
+    height: 100%;
+}
+
+
+
+.logo{
+    height: 170px;
+    margin-bottom: 10px;
+}
+
+.body{
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+}

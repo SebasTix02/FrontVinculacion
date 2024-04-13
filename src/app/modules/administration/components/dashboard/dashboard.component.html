@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+<app-aside></app-aside>
+<!-- Modals -->
+<app-modal-user></app-modal-user>
+<app-modal-supplier></app-modal-supplier>
+<app-modal-products></app-modal-products>
+<app-modal-category></app-modal-category>
+
+<main class="mt-5 pt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Dashboard</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let card of listCards" (click)="selectModalCard(card)" class="col-md-3 mb-3 cardStyle">
+                <div class="card bg-{{card.color}} text-{{card.textColor}} h-100">
+                    <div class="card-body py-5 d-flex justify-content-between align-items-center">
+                        <span class="material-symbols-sharp">{{card.icon}}</span>
+                        {{card.title}}
+                    </div>
+                    <!-- <div class="card-footer d-flex">
+                    View Details
+                    <span class="ms-auto">
+                        <i class="bi bi-chevron-right"></i>
+                    </span>
+                </div> -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-header">
+                    <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                    Area Chart Example
+                </div>
+                <div class="card-body">
+                    <canvas class="chart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-header">
+                    <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                    Area Chart Example
+                </div>
+                <div class="card-body">
+                    <canvas class="chart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+        <!-- la tabla esta en este row -->
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <span><i class="bi bi-table me-2"></i></span> Data Table
+                    </div>
+                    <div class="card-body">
+                        <!-- El style fue lo ultimo que agregue para que aparezca el scroll xd -->
+                        <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+                            <table id="example" class="table table-striped data-table" style="width: 100%">
+                                <thead>
+                                    <tr>
+
+                                        <th>ID producto</th>
+                                        <th>Categoria</th>
+                                        <th>nombre</th>
+                                        <th>Precio</th>
+                                        <th>Stock</th>
+                                        <th>Disponibilidad</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of listProducts">
+                                        <td>{{item.idProduct}}</td>
+                                        <td>{{item.idCatBelong}}</td>
+                                        <td>{{item.productName}}</td>
+                                        <td>{{item.productPrice}}</td>
+                                        <td>{{item.stock}}</td>
+                                        <td>{{item.available}}</td>
+                                        <td>
+                                            <button (click)="editProduct('ProductEditModal',item)" type="button"
+                                                style="margin-right: 10px;" class="btn btn-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button (click)="deleteProduct(item.idProduct)" type="button"
+                                                style="margin-left: 10px;" class="btn btn-danger">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
