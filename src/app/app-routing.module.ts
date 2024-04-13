@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageLoginComponent } from './modules/auth/pages/page-login/page-login.component';
-import { PageDashboardComponent } from './modules/administration/pages/page-dashboard/page-dashboard.component';
 import { authGuard } from './utils/auth.guard';
 
 /*@routes: Defino el enrutamiento que va a tener mi webApp
@@ -14,7 +13,6 @@ const routes: Routes = [
   // {path:'', component:PageLoginComponent},
   {path:'login', component:PageLoginComponent},
   //{path:'panel', component:PageDashboardComponent},
-  {path:'panel', loadChildren:() =>import('./modules/administration/administration.module').then((m) => m.AdministrationModule), canActivate:[authGuard]},
   {path:'usuarios', loadChildren:() =>import('./modules/auth/auth.module').then((m)=>m.AuthModule), canActivate:[authGuard]},
   ];
 

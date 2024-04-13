@@ -22,7 +22,6 @@ export class AsideMenuService {
 
   //lista de Menu con todo lo que se requiere
   private asideMenuList: IAsideMenu[] = [
-    { title: 'Panel', url: '/panel', icon: 'grid_view' },
     { title: 'Usuarios', url: '/usuarios', icon: 'person_add' }
   ];
 
