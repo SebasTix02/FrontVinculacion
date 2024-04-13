@@ -44,7 +44,7 @@ export class LoginComponent{
     this._userService.login(user).subscribe({
       next: (token)=>{
         localStorage.setItem('token', token);
-        this.router.navigate(['/panel']);
+        this.router.navigate(['/usuarios']);
       },
       error:(e: HttpErrorResponse) => {
         this._errorService.msgError(e);

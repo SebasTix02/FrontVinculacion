@@ -9,7 +9,7 @@ loadchildren: es lazyload*/
 const routes: Routes = [
   //login management
   // {path: '**', redirectTo: 'login', pathMatch: 'full'},
-  {path: '', redirectTo: 'usuarios', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   // {path:'', component:PageLoginComponent},
   {path:'login', component:PageLoginComponent},
   //{path:'panel', component:PageDashboardComponent},

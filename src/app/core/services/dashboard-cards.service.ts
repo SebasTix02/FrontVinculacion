@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { OutputProductService } from 'src/app/services/output-product.service';
-import { RegistrationProductService } from 'src/app/services/registration-product.service';
 
 export interface ICardsMenu {
   title: string;
