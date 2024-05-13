@@ -34,10 +34,11 @@
                             <table id="example" class="table table-striped data-table" style="width: 100%">
                                 <thead>
                                     <tr>
-                                        <th>Identificación</th>
+                                        <th>ción</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
                                         <th>Nombre de usuario</th>
+                                        <th>Rol</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -47,6 +48,7 @@
                                         <td>{{item.nameUser}}</td>
                                         <td>{{item.lastNameUser}}</td>
                                         <td>{{item.userName}}</td>
+                                        <td>{{item.userRole}}</td>
                                         <td>
                                             <button (click)="editUser('userModaledit', item)" type="button"
                                                 style="margin-right: 10px;" class="btn btn-primary">

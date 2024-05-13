@@ -62,7 +62,8 @@ export class SignInComponent {
       nameUser: item.nameUser,
       lastNameUser: item.lastNameUser,
       userName: item.userName,
-      passwordUser: item.passwordUser
+      //passwordUser: item.passwordUser,
+      userRole: item.userRole
     });
     this.openModal(nameModal);
   }

@@ -51,7 +51,18 @@
                                     *El campo no puede estar vacio
                                 </div>
                                 <input type="text" formControlName="passwordUserValidator" class="form-control">
+                                
                                 <br>
+                                
+                                <label class="col-form-label">Rol del Usuario</label>
+                                <select formControlName="userRole" class="form-control">
+                                    <option *ngFor="let role of roles" [value]="role.value">{{ role.display }}</option>
+                                    <div class="alert alert-danger mt-2"
+                                        [hidden]="rolValidatorEmpty.valid || rolValidatorEmpty.pristine">
+                                        <span *ngIf="rolValidatorEmpty.errors?.['required']">Escoga que tipo de usuario
+                                            es.</span>
+                                    </div>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -106,6 +117,16 @@
                                     *El campo no puede estar vacio
                                 </div>
                                 <br>
+                                
+                                <label class="col-form-label">Rol del Usuario</label>
+                                <select formControlName="userRole" class="form-control">
+                                    <option *ngFor="let role of roles" [value]="role.value">{{ role.display }}</option>
+                                    <div class="alert alert-danger mt-2"
+                                        [hidden]="rolValidatorEmpty.valid || rolValidatorEmpty.pristine">
+                                        <span *ngIf="rolValidatorEmpty.errors?.['required']">Escoga que tipo de usuario
+                                            es.</span>
+                                    </div>
+                                </select>
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,11 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./modal-user.component.css']
 })
 export class ModalUserComponent {
-
+  roles=[
+    { value: 'Admin', display: 'Administrador' },
+    { value: 'Usuario', display: 'Usuario' },
+    { value: 'Electricista', display: 'Electricista' },
+  ]
   constructor(private toastr: ToastrService, private _userService: UserService,
     private router: Router, private _errorService: ErrorService) { }
 
@@ -43,6 +47,10 @@ export class ModalUserComponent {
     return this.formAddUser.get('passwordUserValidator') as FormControl;
   }
 
+  get rolValidatorEmpty() {
+    return this.formAddUser.get('passwordUserValidator') as FormControl;
+  }
+
   formAddUser = new FormGroup({
     "dniUser": new FormControl('', [Validators.required, Validators.pattern(/^\d{1,10}$/)]),
     "nameUser": new FormControl('', [Validators.required, Validators.maxLength(20) ,Validators.pattern(/^[a-zA-ZñÑ\s]*$/)]),
@@ -50,6 +58,7 @@ export class ModalUserComponent {
     "userName": new FormControl('', [Validators.required,Validators.maxLength(10) ,Validators.pattern(/^[a-zA-Z0-9ñÑ\s]*$/)]),
     "passwordUser": new FormControl('', [Validators.required, Validators.maxLength(15)]),
     "passwordUserValidator": new FormControl('', [Validators.required, Validators.maxLength(15)]),
+    "userRole": new FormControl('', [Validators.required, Validators.maxLength(20) ,Validators.pattern(/^[a-zA-ZñÑ\s]*$/)]),
   })
 
   //Here start my modal edit------
@@ -71,7 +80,8 @@ export class ModalUserComponent {
     "nameUser": new FormControl('', [Validators.required, Validators.maxLength(20) ,Validators.pattern(/^[a-zA-ZñÑ\s]*$/)]),
     "lastNameUser": new FormControl('',  [Validators.required, Validators.maxLength(20) ,Validators.pattern(/^[a-zA-ZñÑ\s]*$/)]),
     "userName": new FormControl('',  [Validators.required, Validators.maxLength(10) ,Validators.pattern(/^[a-zA-Z0-9ñÑ\s]*$/)]),
-    "passwordUser": new FormControl('', Validators.required)
+    "passwordUser": new FormControl(''),
+    "userRole": new FormControl('')
   })
 
 
@@ -88,7 +98,7 @@ export class ModalUserComponent {
       lastNameUser:this.formAddUser.get('lastNameUser')?.value || '',
       userName:this.formAddUser.get('userName')?.value || '',
       passwordUser:this.formAddUser.get('passwordUser')?.value || '',
-      userRole:'',
+      userRole:this.formAddUser.get('userRole')?.value || '',
     }
 
     this._userService.signIn(user).subscribe({
@@ -112,6 +122,7 @@ export class ModalUserComponent {
       nameUser:this.formEditUser.get('nameUser')?.value || '',
       lastNameUser:this.formEditUser.get('lastNameUser')?.value || '',
       userName:this.formEditUser.get('userName')?.value || '',
+      userRole:this.formEditUser.get('userRole')?.value || '',
     }
 
     this._userService.editUser(idUser, user).subscribe({
