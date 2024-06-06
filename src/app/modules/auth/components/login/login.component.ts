@@ -44,7 +44,31 @@ export class LoginComponent{
     this._userService.login(user).subscribe({
       next: (token)=>{
         localStorage.setItem('token', token);
-        this.router.navigate(['/usuarios']);
+        function decodeJWT(token: string) {
+          try {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+              return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+      
+            return JSON.parse(jsonPayload);
+          } catch (error) {
+            console.error('Error decoding token:', error);
+            return null;
+          }
+        }
+      
+        // Decodificar el token y obtener el userRole
+        const decodedToken = decodeJWT(token);
+        const userRole = decodedToken ? decodedToken.userRole : null;
+        if (userRole === 'Admin') {
+          this.router.navigate(['/usuarios']);
+        } else {
+          alert("No tiene los permisos necesarios para ingresar!!!!")
+          this.loading=false;
+          this.router.navigate(['/']);
+        }
       },
       error:(e: HttpErrorResponse) => {
         this._errorService.msgError(e);
@@ -53,5 +77,7 @@ export class LoginComponent{
     })
 
   }
+  
 
 }
+
