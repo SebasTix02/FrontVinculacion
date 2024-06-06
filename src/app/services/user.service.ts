@@ -33,7 +33,7 @@ export class UserService {
   }
 
   login(user: UserLoginFields): Observable<string>{
-    return this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}/userLogin`,user)
+    return this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}userLogin`,user)
   }
 
   getUsers(): Observable<User[]>{
@@ -41,11 +41,11 @@ export class UserService {
   }
   
   deleteUserById(idUser:string):Observable<any>{
-    return this.http.delete<string>(`${this.myAppUrl}${this.myApiUrl}/${idUser}`);
+    return this.http.delete<string>(`${this.myAppUrl}${this.myApiUrl}${idUser}`);
   }
 
   editUser(idUser:string, user:UserEdit):Observable<any>{
-    return this.http.put<string>(`${this.myAppUrl}${this.myApiUrl}/${idUser}`,user).pipe(
+    return this.http.put<string>(`${this.myAppUrl}${this.myApiUrl}${idUser}`,user).pipe(
       tap(()=>{
           this.dataModifiedTable.next();
       })
