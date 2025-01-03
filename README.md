@@ -1,27 +1,31 @@
 # FrontAdmin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 16.2.5.
 
-## Development server
+## Servidor de Desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ejecuta `ng serve` para iniciar el servidor de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si realizas cambios en alguno de los archivos fuente.
 
-## Code scaffolding
+## Generación de Código
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecuta `ng generate component nombre-del-componente` para generar un nuevo componente. También puedes usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Compilación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Ejecuta `ng build` para compilar el proyecto. Los archivos generados serán almacenados en el directorio `dist/`.
 
-## Running unit tests
+## Ejecutando pruebas unitarias
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecuta `ng test` para ejecutar las pruebas unitarias mediante [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Ejecutando pruebas de extremo a extremo
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ejecuta `ng e2e` para ejecutar las pruebas de extremo a extremo utilizando la plataforma de tu elección. Para usar este comando, primero debes agregar un paquete que implemente las capacidades de pruebas de extremo a extremo.
 
-## Further help
+## Más ayuda
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obtener más ayuda sobre el Angular CLI, usa `ng help` o visita la página de [Angular CLI Overview and Command Reference](https://angular.io/cli).
+
+## Información del Proyecto
+
+Este proyecto fue realizado para el **EPEMA** (Empresa Pública de Energía y Mantenimiento en Ecuador). Es una **aplicación web desarrollada en Angular** cuyo objetivo es gestionar los usuarios de una aplicación móvil utilizada para el control de las luces en la empresa. La plataforma permite administrar de forma eficiente los permisos y el acceso de los usuarios que interactúan con el sistema de control de iluminación.
