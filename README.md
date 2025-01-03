@@ -28,4 +28,4 @@ Para obtener más ayuda sobre el Angular CLI, usa `ng help` o visita la página 
 
 ## Información del Proyecto
 
-Este proyecto fue realizado para el **EPEMA** (Empresa Pública de Energía y Mantenimiento en Ecuador). Es una **aplicación web desarrollada en Angular** cuyo objetivo es gestionar los usuarios de una aplicación móvil utilizada para el control de las luces en la empresa. La plataforma permite administrar de forma eficiente los permisos y el acceso de los usuarios que interactúan con el sistema de control de iluminación.
+Este proyecto fue realizado para el **EP-EMA** (Empresa Pública Empresa Municipal Mercado Mayorista Ambato). Es una **aplicación web desarrollada en Angular** cuyo objetivo es gestionar los usuarios de una aplicación móvil utilizada para el control de las luces en la empresa. La plataforma permite administrar de forma eficiente los permisos y el acceso de los usuarios que interactúan con el sistema de control de iluminación.
